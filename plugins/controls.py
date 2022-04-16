@@ -93,7 +93,7 @@ async def skip_track(_, m: Message):
             items.sort(reverse=True)
             for i in items:
                 if 2 <= i <= (len(Config.playlist) - 1):
-                    await msg.edit(f"Oynatma Listesinden Başarıyla Kaldırıldı- {in}. **{Config.playlist[i][1]}**")
+                    await msg.edit(f"Oynatma Listesinden Başarıyla Kaldırıldı- {i}. **{Config.playlist[i][1]}**")
                     await clear_db_playlist(song=Config.playlist[i])
                     Config.playlist.pop(i)
                     await delete_messages([m, msg])
