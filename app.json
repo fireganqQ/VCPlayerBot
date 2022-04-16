@@ -1,0 +1,85 @@
+{
+    "name": "VCPlayerBot",
+    "description": "Telegram bot to stream video in telegram VC",
+    "repository": "https://github.com/subinps/VCPlayerBot",
+    "stack": "container",
+    "keywords": [
+      "telegram",
+      "bot",
+      "voicechat",
+      "music",
+      "python",
+      "pyrogram",
+      "pytgcalls",
+      "tgcalls",
+      "voip"
+    ],
+    "env": {
+      "API_ID": {
+        "description": "my.telegram.org/apps adresinden Telegram API Anahtarınızın api_id kısmı",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "my.telegram.org/apps adresinden Telegram API Anahtarınızın api_hash kısmı",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "Bot'un Bot jetonu, @Botfather'dan alın",
+        "required": true
+      },
+      "SESSION_STRING": {
+        "description": "Oturum dizesi, Pyrogram ile nasıl dışa aktarılacağını öğrenmek için README'yi okuyun",
+        "required": true
+      },
+      "CHAT": {
+        "description": "Botun Müzik çaldığı Kanalın veya Grubun Kimliği",
+        "required": true
+      },
+      "LOG_GROUP": {
+        "description": "Çalma listesi gönderilecek grubun kimliği CHAT bir Grup ise, kanal ise boş bırakın",
+        "required": false
+      },
+      "QUALITY": {
+        "description": "Video oynatıcınızın varsayılan kalitesi, Yüksek, orta veya düşük değerlerden birini kullanın.",
+        "value": "high",
+        "required": false
+      },
+      "DATABASE_URI": {
+        "description": "Mongo DB veritabanı URI'si , https://cloud.mongodb.com adresinden alın, bu isteğe bağlı olsa bile, bu ayarlanmadığında birçok işlev çalışmayabilir.",
+        "required": false
+      },
+      "ADMINS": {
+        "description": "Yönetici komutlarını kullanabilen Kullanıcıların Kimliği (boşlukla ayrılmış birden çok kullanıcı için)",
+        "required": true
+      },
+      "ADMIN_ONLY": {
+        "description": "/play komutunu herkes için kullanılabilir hale getirmek istiyorsanız, bunu True olarak değiştirin.",
+        "value": "False",
+        "required": false
+      },
+      "HEROKU_API_KEY": {
+        "description": "Heroku API anahtarınızı https://dashboard.heroku.com/account/applications/authorizations/new adresinden alın.",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "Heroku App Name.",
+        "required": false
+      },
+      "STARTUP_STREAM": {
+        "description": "YouTube canlı / Bir videoya doğrudan bağlantı / Bir YouTube oynatma listesine telegram bağlantısı.(Daha fazla bilgi için BENİ OKU'yu okuyun.)",
+        "value": "https://youtu.be/zcrUCvBD16k",
+        "required": false
+      },
+      "REPLY_MESSAGE": {
+        "description": "KULLANICI hesabına PM ile mesaj atanlara cevap mesajı. Bu özelliğe ihtiyacınız yoksa boş bırakın.",
+        "value": "Hey, ben müzik çalan bir botum, seninle sohbet etmeye vaktim yok.",
+        "required": false
+      }
+    },
+    "formation": {
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
+    }
+  }
