@@ -155,7 +155,7 @@ async def resume_playing(_, m: Message):
 async def set_vol(_, m: Message):
     if not Config.CALL_STATUS:
         await m.reply_text(
-            "",Oyuncu boşta, oynatıcıyı aşağıdaki düğmeyi kullanarak başlatın. ㅤㅤㅤㅤㅤㅤ
+            "Oyuncu boşta, oynatıcıyı aşağıdaki düğmeyi kullanarak başlatın. ㅤㅤㅤㅤㅤㅤ",
             disable_web_page_preview=True,
             reply_markup=await get_buttons()
         )
